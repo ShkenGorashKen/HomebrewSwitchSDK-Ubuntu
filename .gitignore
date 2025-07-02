@@ -1,5 +1,5 @@
 # Build artifacts
-build/
+*/build/
 *.elf
 *.nro
 *.bak
@@ -8,14 +8,17 @@ build/
 config-history/*.log
 config-history/*.json
 
-# SDL2 submodules
+# SDL2 source
 SDL2-clean/build-switch/
 SDL2-clean/configure.ac.bak
 
-# Plutonium build
+# Plutonium artifacts
 Plutonium/build/
 Plutonium/.vscode/
+Plutonium/*.o
 
-# Demos
-*/build/
-*/output/
+# Project folders
+projects/*/build/
+projects/*/*.elf
+projects/*/*.nro
+projects/*/*.bak

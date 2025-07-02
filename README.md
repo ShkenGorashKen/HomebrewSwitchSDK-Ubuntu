@@ -1,62 +1,75 @@
-# HomebrewSwitchSDK
+# HomebrewSwitchSDK-Ubuntu 🎮🐧
 
-Entorno profesional para desarrollar homebrew en Nintendo Switch con SDL2, libnx y Plutonium.  
-Creado por **ShkenGorashKen** → [github.com/ShkenGorashKen](https://github.com/ShkenGorashKen)
+Entorno de desarrollo automatizado para crear homebrew para Nintendo Switch desde Ubuntu/Linux. Ideal para desarrolladores de todos los niveles — incluso sin experiencia previa.
 
----
+## 🧃 Características
 
-## 🎮 ¿Qué hace este SDK?
+- ✅ Instalación automática de dependencias vía `apt`
+- ✅ Compilación limpia de SDL2 con flags personalizados
+- ✅ Plutonium UI lista para usar con C++ moderno
+- ✅ Proyecto demo generado con interfaz gráfica
+- ✅ Compatible con `devkitA64`, `libnx`, y `nxlink`
 
+## 🚀 Instalación
 
-- Instala automáticamente devkitPro, libnx y toolchains
-- Compila SDL2 limpio y estático para Switch
-- Clona y compila Plutonium UI
-- Instala todas las dependencias gráficas y multimedia
-- Genera proyectos interactivos con UI, botón, entrada de texto y créditos
-- Crea un fingerprint con toda la configuración usada
+1. Cloná el repositorio:
 
----
+   ```bash
+   git clone https://github.com/ShkenGorashKen/HomebrewSwitchSDK-Ubuntu.git
+   cd HomebrewSwitchSDK-Ubuntu
 
-## 📦 Dependencias instaladas
-
-
-```bash
-switch-sdl2 switch-sdl2_ttf switch-sdl2_image switch-sdl2_gfx switch-sdl2_mixer
-switch-mesa switch-glad switch-glm switch-libdrm_nouveau
-switch-libwebp switch-libpng switch-freetype switch-bzip2
-switch-libjpeg-turbo switch-opusfile switch-libopus
-
-🛠️ Cómo usar
-
-
-Abrí MSYS2 (terminal "MSYS2 MSYS")
-
-Cloná este repositorio y ejecutá:
-
-bash
-chmod +x setup-switch-sdk.sh verify-checksum.sh
+chmod +x setup-switch-sdk.sh
 ./setup-switch-sdk.sh
-Ingresá el nombre del proyecto cuando se te pida
 
-Entrá en la carpeta generada y compilá con:
+Ingresá el nombre de tu proyecto cuando se te pida 📦 Se generará automáticamente en /projects/ junto con su código fuente, Makefile, y README propio
+
+🧰 Requisitos técnicos
+Ubuntu 20.04+ o Debian 11+
+
+Toolchain para Nintendo Switch (aarch64-none-elf-gcc)
+
+💡 Podés instalar devkitA64 desde devkitpro.org
+
+Git, curl, y acceso a internet
+
+📁 Estructura de proyecto
+HomebrewSwitchSDK-Ubuntu/
+├── setup-switch-sdk.sh              # Instalador principal
+├── verify-checksum.sh              # Fingerprint de SDL2
+├── .gitignore                      # Ignora archivos temporales
+├── SDL2-clean/                     # Código fuente SDL2
+├── Plutonium/                      # Interfaz gráfica para Switch
+└── projects/
+    └── MiProyecto/
+        ├── source/main.cpp         # Código base del homebrew
+        ├── Makefile                # Reglas de compilación
+        ├── assets/                 # Archivos del usuario
+        └── README.md               # Info de tu proyecto
+🔧 Compilación y envío
+Dentro de tu proyecto generado:
 
 bash
+cd projects/MiProyecto
 make
+⚙️ Esto genera un archivo .nro para ser enviado vía nxlink.
 
+🎮 Créditos
+Este SDK fue creado por ShkenGorashKen
 
-📜 Créditos
+🔗 GitHub: github.com/ShkenGorashKen
 
+Incluye herramientas y librerías de:
 
-SDL2
+📦 SDL2 → libsdl-org/SDL
 
-libnx
+📦 libnx → switchbrew/libnx
 
-Plutonium
+🎨 Plutonium UI → XorTroll/Plutonium
 
-SDK creado por ShkenGorashKen
+🛠️ Toolchain → devkitPro/devkitA64
 
+🧪 Versión actual
+HomebrewSwitchSDK v1.0 – Ubuntu Edition 📅 Publicado: Julio 2025
 
-📘 Licencia
+✅ Preparado para recibir mejoras, ejemplos adicionales y opciones gráficas.
 
-
-Este proyecto se publica bajo GPLv3. Todo código derivado debe seguir siendo libre, abierto y accesible.
